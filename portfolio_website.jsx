@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function Portfolio() {
@@ -49,18 +47,14 @@ export default function Portfolio() {
               whileHover={{ scale: 1.03 }} 
               whileTap={{ scale: 0.98 }} 
               transition={{ type: "spring", stiffness: 300 }}>
-              <Card>
-                <CardContent className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">{repo.name}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2">{repo.description || "No description provided."}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Language: {repo.language || "N/A"}</p>
-                  <Button asChild>
-                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                      View Project
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
+              <div className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+                <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">{repo.name}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-2">{repo.description || "No description provided."}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Language: {repo.language || "N/A"}</p>
+                <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">View Project</button>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
