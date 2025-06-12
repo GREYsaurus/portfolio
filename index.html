@@ -148,46 +148,6 @@
     <footer>
         <p>&copy; 2025 Joshua Rusch</p>
     </footer>
-    <script>
-        // Example: Add a little animation to the nav links on page load
-        document.querySelectorAll('nav a').forEach((link, i) => {
-            link.style.opacity = 0;
-            setTimeout(() => {
-                link.style.transition = "opacity 0.7s";
-                link.style.opacity = 1;
-            }, 400 + i * 200);
-        });
-
-        // Example: Add a few sample projects dynamically
-        const projects = [
-            {
-                title: "Personal Portfolio Website",
-                description: "This website! Built with HTML, CSS, and a touch of JavaScript.",
-                link: "https://github.com/GREYsaurus/portfolio"
-            },
-            {
-                title: "Python Data Analyzer",
-                description: "A Python tool for analyzing and visualizing CSV data.",
-                link: "#"
-            },
-            {
-                title: "C# Task Manager",
-                description: "A simple desktop app for managing daily tasks, built with C# and WinForms.",
-                link: "#"
-            }
-        ];
-
-        const projectsList = document.getElementById('projects-list');
-        projects.forEach(project => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.innerHTML = `
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <a href="${project.link}" target="_blank">View Project</a>
-            `;
-            projectsList.appendChild(card);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
