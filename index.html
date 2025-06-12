@@ -5,6 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joshua Rusch | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fira+Mono&display=swap" rel="stylesheet">
+    <!-- Simple CSS animation for fade-in -->
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #f4f4f4;
+            margin: 0;
+            min-height: 100vh;
+            animation: fadeIn 1.2s;
+        }
+        header {
+            background: rgba(34, 49, 63, 0.95);
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            letter-spacing: 2px;
+            font-family: 'Fira Mono', monospace;
+            color: #00e0ff;
+            text-shadow: 0 2px 8px #222;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b2bec3;
+            margin-bottom: 1rem;
+        }
+        nav a {
+            color: #00e0ff;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px #00e0ff;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: rgba(44, 62, 80, 0.92);
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            padding: 2rem;
+            animation: fadeInUp 1.2s;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            color: #00e0ff;
+            border-bottom: 2px solid #00e0ff;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-family: 'Fira Mono', monospace;
+        }
+        #projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+        .project-card {
+            background: #232526;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px #00e0ff44;
+        }
+        footer {
+            text-align: center;
+            padding: 1.2rem 0;
+            background: rgba(34, 49, 63, 0.95);
+            color: #b2bec3;
+            font-size: 1rem;
+            margin-top: 2rem;
+            border-radius: 0 0 12px 12px;
+        }
+        a {
+            color: #00e0ff;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #fff;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,19 +135,59 @@
             </div>
         </section>
         <section id="contact">
-    <h2>Contact</h2>
-    <p>
-        Feel free to reach out or check out my work on GitHub!
-    </p>
-    <ul>
-        <li>Email: <a href="mailto:jrusch784@gmail.com">jrusch784@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/GREYsaurus" target="_blank">GREYsaurus</a></li>
-    </ul>
-</section>
+            <h2>Contact</h2>
+            <p>
+                Feel free to reach out or check out my work on GitHub!
+            </p>
+            <ul>
+                <li>Email: <a href="mailto:jrusch784@gmail.com">jrusch784@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/GREYsaurus" target="_blank">GREYsaurus</a></li>
+            </ul>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Joshua Rusch</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        // Example: Add a little animation to the nav links on page load
+        document.querySelectorAll('nav a').forEach((link, i) => {
+            link.style.opacity = 0;
+            setTimeout(() => {
+                link.style.transition = "opacity 0.7s";
+                link.style.opacity = 1;
+            }, 400 + i * 200);
+        });
+
+        // Example: Add a few sample projects dynamically
+        const projects = [
+            {
+                title: "Personal Portfolio Website",
+                description: "This website! Built with HTML, CSS, and a touch of JavaScript.",
+                link: "https://github.com/GREYsaurus/portfolio"
+            },
+            {
+                title: "Python Data Analyzer",
+                description: "A Python tool for analyzing and visualizing CSV data.",
+                link: "#"
+            },
+            {
+                title: "C# Task Manager",
+                description: "A simple desktop app for managing daily tasks, built with C# and WinForms.",
+                link: "#"
+            }
+        ];
+
+        const projectsList = document.getElementById('projects-list');
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <a href="${project.link}" target="_blank">View Project</a>
+            `;
+            projectsList.appendChild(card);
+        });
+    </script>
 </body>
 </html>
