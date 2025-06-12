@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joshua Rusch Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="portfolio_website.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Rusch | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Joshua Rusch</h1>
+        <p class="subtitle">IT Professional & Aspiring C# / Python Developer</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hi! I'm Joshua Rusch, an IT professional passionate about software development. 
+                I'm currently focusing on becoming a proficient C# and Python developer.
+                I enjoy solving problems, learning new technologies, and building useful applications.
+            </p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="projects-list">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </section>
+        <section id="contact">
+    <h2>Contact</h2>
+    <p>
+        Feel free to reach out or check out my work on GitHub!
+    </p>
+    <ul>
+        <li>Email: <a href="mailto:jrusch784@gmail.com">jrusch784@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/GREYsaurus" target="_blank">GREYsaurus</a></li>
+    </ul>
+</section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Joshua Rusch</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
